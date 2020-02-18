@@ -176,6 +176,7 @@
 		5DD0FFCF1B1D225C00837121 /* DiscussionNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD0FFCD1B1D225C00837121 /* DiscussionNewPostViewController.swift */; };
 		5DD0FFD21B1D23DA00837121 /* DiscussionNewPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DD0FFD11B1D23DA00837121 /* DiscussionNewPostViewController.xib */; };
 		5DEA47D71B62F64300831EC9 /* DiscussionObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA47D61B62F64300831EC9 /* DiscussionObjectModel.swift */; };
+		5F60728123E445E3004DBF07 /* WKWebView+LanguageCookie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F60728023E445E2004DBF07 /* WKWebView+LanguageCookie.swift */; };
 		67FDC7528B4181D9153A7C36 /* Pods_edXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F80CBFF126E890C3709DEAF /* Pods_edXTests.framework */; };
 		6919F5FF1D65CD27006935C8 /* OEXColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6919F5FE1D65CD27006935C8 /* OEXColors.swift */; };
 		6926CDAB1D59BE3600A16E22 /* ic_next_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 6926CDA41D59BE3600A16E22 /* ic_next_press.png */; };
@@ -1179,6 +1180,7 @@
 		5DD0FFCD1B1D225C00837121 /* DiscussionNewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscussionNewPostViewController.swift; sourceTree = "<group>"; };
 		5DD0FFD11B1D23DA00837121 /* DiscussionNewPostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscussionNewPostViewController.xib; sourceTree = "<group>"; };
 		5DEA47D61B62F64300831EC9 /* DiscussionObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscussionObjectModel.swift; sourceTree = "<group>"; };
+		5F60728023E445E2004DBF07 /* WKWebView+LanguageCookie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+LanguageCookie.swift"; sourceTree = "<group>"; };
 		61E8D7FCCFA0751E2D510864 /* libPods-EndToEndTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EndToEndTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6919F5FE1D65CD27006935C8 /* OEXColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OEXColors.swift; sourceTree = "<group>"; };
 		6926CDA41D59BE3600A16E22 /* ic_next_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_next_press.png; sourceTree = "<group>"; };
@@ -2791,6 +2793,7 @@
 				7706AAC01BCFEEBF00728432 /* NSAttributedString+Formatting.swift */,
 				5DEA47D51B62F64300831EC9 /* QLearnSDK */,
 				774B393A1B5EEF8A00595D33 /* UIAlertController+Selection.swift */,
+				5F60728023E445E2004DBF07 /* WKWebView+LanguageCookie.swift */,
 				77691F971B38A09B003922F2 /* NSAttributedString+Combination.swift */,
 				77092C741B42E461004AA1A1 /* UIStatusBarStyle+Styles.swift */,
 				1AC147361BCEB14900E0A230 /* CGRect+OEXHelpers.swift */,
@@ -4921,6 +4924,7 @@
 				B7CCC738209B16B100A66923 /* Debugging.swift in Sources */,
 				77C6BBCA1CB4BC6F0026C37B /* AccomplishmentsView.swift in Sources */,
 				B7CCC72F209B16B100A66923 /* ConstraintConstantTarget.swift in Sources */,
+				5F60728123E445E3004DBF07 /* WKWebView+LanguageCookie.swift in Sources */,
 				77509D981BE1916600B10CD3 /* UserProfileManager.swift in Sources */,
 				77E209851AF158190071316D /* CourseOutline.swift in Sources */,
 				1A8172531C3C21DE007262AA /* TwitterConfig.swift in Sources */,

@@ -66,8 +66,8 @@ private class WKWebViewContentController : WebContentController {
         if let userAgent = UserDefaults.standard.string(forKey: "UserAgent"), webView.customUserAgent?.isEmpty ?? false {
             webView.customUserAgent = userAgent
         }
-    
-        webView.load(request as URLRequest)
+        
+        webView.loadRequest(request as URLRequest)
     }
     
     func resetState() {
