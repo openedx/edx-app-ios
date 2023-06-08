@@ -1,0 +1,77 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Run end-to-end tests"
+  lane :test do |options|
+    scheme = options[:scheme]
+    begin
+      scan(
+        scheme: scheme,
+        workspace: "edX.xcworkspace",
+        clean: true,
+        devices: ["iPhone 8 (15.2)", "iPhone 8 (14.4)"]
+      )
+    rescue => ex
+      puts ex
+    end
+  end
+
+desc "build number"
+  lane :test_build_number do
+    latest_testflight_build_number
+    #increment_build_number(xcodeproj: "edX.xcodeproj")
+  end
+
+  desc "Build edX iOS app"
+  lane :build do
+    cocoapods
+    gym(
+      workspace: "edX.xcworkspace",
+      scheme: "edX"
+    )
+  end
+
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    increment_build_number(xcodeproj: "edX.xcodeproj")
+    gym(workspace: "edX.xcworkspace", scheme: "edX")
+    # upload_to_testflight
+  end
+
+  desc "Push a new beta build to for Staging"
+  lane :stage do 
+    apply_stage_properties
+    build_ipa
+  end
+
+  desc "Push a new beta build to for Production"
+  lane :prod do 
+    apply_prod_properties
+    build_ipa
+  end
+
+  def apply_stage_properties
+    File.delete("../edx.properties") if File.exist?("../edx.properties")
+    File.open("../edx.properties", "w") {|file| file.puts "edx.dir = '../edx-mobile-config/stage'" }
+  end
+
+  def apply_prod_properties
+    File.delete("../edx.properties") if File.exist?("../edx.properties")
+    File.open("../edx.properties", "w") {|file| file.puts "edx.dir = '../edx-mobile-config/prod'" }
+  end
+
+  def build_ipa
+    increment_build_number(xcodeproj: "edX.xcodeproj")
+    match(app_identifier: "org.edx.mobile", type: "appstore", readonly: true, git_url: "git@github.com:salman2013/Apple-Certificate.git")
+    gym(
+      workspace: "edX.xcworkspace",
+      scheme: "edX",
+      export_options: {
+        method: "app-store",
+        provisioningProfiles: { 
+          "org.edx.mobile" => "match AppStore org.edx.mobile"
+        }
+      }
+    )
+  end
+end

@@ -1,0 +1,26 @@
+name: "Fastlane"
+
+on:
+  push
+
+jobs:
+  test:
+    name: "${{ matrix.env.name }}"
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          - name: "Test edX LTR"
+            scheme: "edX"
+          # - name: "Test edX RTL"
+          #   scheme: "edX-RTL"
+    steps:
+      # - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: edx/edx-mobile-config
+          ref: master
+          token: ${{ secrets.EDX_DEPLOYMENT_GH_TOKEN }}
+      #- run: fastlane test scheme:${{ matrix.env.scheme }}
