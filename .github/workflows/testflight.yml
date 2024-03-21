@@ -1,0 +1,18 @@
+# WIP
+
+name: CI
+
+on:
+#  push:
+#    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Fastlane setup
+        run: fastlane setup
+      - name: Fastlane deploy
+        run: fastlane beta
